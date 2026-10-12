@@ -1,0 +1,17 @@
+1: Ele organiza a troca de recursos entre front-end e back-end, com métodos HTTPS. São eles:
+get (pega uma informação)
+post (Ele cria uma nova informação, por isso o nome "post")
+put (atualizar)
+delete (deletar)
+
+2: LocalStorage só salva as informações no navegador de quem usa, já em um banco de dados, ele salva as informações e qualquer pessoa que acessar o site podera ver.
+
+3: Significa que, toda vez que fpr criado um id.client, ele é considerado uma chave primaria e ele incrementa +1 a cada vez que ele é criado.
+
+4: "Not Null" significa que aqueles campos só vão aceitar valores diferente do valor Null. Raça e cor não possum pois são informações necessárias sobre o pet.
+
+5:Seria o comando "select", onde você seleciona uma informação especifica da tabela. Já para deletar um dado específico, utilizamos o "delete" naquela tabela.
+
+6: Utilizando "?", o proprio Sql os implementa no proprio banco de dados, facilitando a consulta e evitando erros de busca. O ataque que é evitdao se chama "SQL Injection", que basicamente é uma modificação nas linhas de codigo para permitir que o outro usuário tenha permissões de adm, ou de apagar o banco de dados.
+
+7: Todos os clientes cadastrados. Pois nos estamos localizados num API, que esta na rota de "clientes" que é aonde todos os clientes já cadastrados estão.
