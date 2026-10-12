@@ -3,6 +3,9 @@ import Home from './pages/Home';
 import ClientesLista from './pages/clientes/Lista';
 import ClienteFormulario from './pages/clientes/Formulario';
 import Servicos from './pages/Servicos';
+import ServicosLista from './pages/servicos/Lista';
+import ServicosFormulario from './pages/servicos/Formulario,jsx';
+
 
 // Cada <Route> liga um endereço (path) a uma página (element).
 //
@@ -22,6 +25,10 @@ function App() {
         <Route path="/clientes/novo" element={<ClienteFormulario />} />
         <Route path="/clientes/:id/editar" element={<ClienteFormulario />} />
         <Route path="/servicos" element={<Servicos />} />
+        <Route path='/servicos/lista' element={<ServicosLista />} />
+        <Route path='/servicos/novo' element={<ServicosFormulario />} />
+        <Route path='/servicos;id/editar' element={<ServicosFormulario />} />
+
       </Routes>
     </BrowserRouter>
   );

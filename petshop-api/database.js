@@ -38,7 +38,14 @@ db.exec(`
     cor TEXT
   )
 `);
-
+db.exec(`
+  CREATE TABLE IF NOT EXISTS servicos (
+    id_servico INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    descricao TEXT,
+    preco REAL NOT NULL
+  )
+`)
 // ---------------------------------------------------------------------
 // PONTO DE EXERCÍCIO
 // ---------------------------------------------------------------------
