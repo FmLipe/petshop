@@ -74,7 +74,7 @@ router.post('/', (req, res) => {
     )
     .run(nome, preco, descricao, duracao_minutos);
 
-  const novoCliente = db
+  const novoServico = db
     .prepare('SELECT * FROM servicos WHERE id_servico = ?')
     .get(resultado.lastInsertRowid);
 
@@ -88,7 +88,7 @@ router.put('/:id', (req, res) => {
     return res.status(400).json({ erro });
   }
 
-  const clienteExistente = db
+  const servicoExistente = db
     .prepare('SELECT * FROM servicos WHERE id_servico = ?')
     .get(req.params.id);
 
