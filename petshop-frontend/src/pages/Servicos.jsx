@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
 
-// Página do cadastro de "Serviços oferecidos" — ainda não implementada.
-// Esse é o ponto de partida do exercício: veja o passo a passo em
-// README.md ("Exercício: crie o cadastro de Serviços oferecidos").
 function Servicos() {
   return (
     <div className="container py-4">
-      <Link to="/" className="btn btn-link ps-0 mb-3 text-decoration-none">
+      <Link to="/" className="btn btn-link text-decoration-none mb-3 p-0">
         ← Voltar
       </Link>
-
       <h1 className="mb-4">🐾 Serviços</h1>
+      <p className="lead">
+        Selecione uma opção para gerir os serviços do petshop:
+      </p>
 
-      <div className="alert alert-warning" role="alert">
-        Não implementada. Esse cadastro é o exercício proposto — veja o
-        passo a passo no <code>README.md</code> do projeto.
+      <div className="d-flex gap-3 mt-4">
+        <Link to="/servicos/lista" className="btn btn-primary">
+          Listar Serviços
+        </Link>
+        <Link to="/servicos/novo" className="btn btn-success">
+          Cadastrar Novo Serviço
+        </Link>
       </div>
     </div>
   );

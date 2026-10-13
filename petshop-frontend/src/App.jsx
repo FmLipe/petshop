@@ -4,7 +4,7 @@ import ClientesLista from './pages/clientes/Lista';
 import ClienteFormulario from './pages/clientes/Formulario';
 import Servicos from './pages/Servicos';
 import ServicosLista from './pages/servicos/Lista';
-import ServicosFormulario from './pages/servicos/Formulario,jsx';
+import ServicosFormulario from './pages/servicos/Formulario';
 
 
 // Cada <Route> liga um endereço (path) a uma página (element).

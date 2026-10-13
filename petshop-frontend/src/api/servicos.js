@@ -1,69 +1,55 @@
-// Funções que conversam com a API do petshop (veja o projeto petshop-api).
-//
-// Usamos o "fetch", que já vem pronto no navegador — não precisa instalar
-// nenhuma biblioteca extra para fazer requisições HTTP.
-//
-// Graças ao proxy configurado em vite.config.js, "/api/servicos" é
-// redirecionado automaticamente para http://localhost:3001/api/servicos.
-
 const BASE_URL = '/api/servicos';
 
-// Busca a lista de todos os Servicos cadastrados.
+// Busca a lista de todos os serviços cadastrados
 export async function listarServicos() {
   const resposta = await fetch(BASE_URL);
   if (!resposta.ok) {
-    throw new Error('Não foi possível carregar os servicos.');
+    throw new Error('Não foi possível carregar os serviços.');
   }
   return resposta.json();
 }
 
-// Busca um único servicos pelo id_servicos (usado na página de edição).
-export async function buscarServicos(id) {
+// Busca um único serviço pelo ID (usado na edição)
+export async function buscarServico(id) {
   const resposta = await fetch(`${BASE_URL}/${id}`);
   if (!resposta.ok) {
-    throw new Error('Servicos não encontrado.');
+    throw new Error('Serviço não encontrado.');
   }
   return resposta.json();
 }
 
-// Cria um novo Servicos. "dados" é um objeto com os campos do formulário.
-export async function criarCliente(dados) {
+// Cria um novo serviço
+export async function criarServico(dados) {
   const resposta = await fetch(BASE_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dados),
   });
   if (!resposta.ok) {
-    throw new Error('Não foi possível cadastrar o Servicos.');
+    throw new Error('Não foi possível cadastrar o serviço.');
   }
   return resposta.json();
 }
 
-// Atualiza um Servicos já existente, identificado pelo id_Servicos.
-export async function atualizarCliente(id, dados) {
+// Atualiza um serviço existente
+export async function atualizarServico(id, dados) {
   const resposta = await fetch(`${BASE_URL}/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dados),
   });
   if (!resposta.ok) {
-    throw new Error('Não foi possível atualizar o Servicos.');
+    throw new Error('Não foi possível atualizar o serviço.');
   }
   return resposta.json();
 }
 
-// Remove um Servicos pelo id_Servicos.
-export async function removerServicos(id) {
-  const resposta = await fetch(`${BASE_URL}/${id}`, { method: 'DELETE' });
+// Remove um serviço pelo ID
+export async function removerServico(id) {
+  const resposta = await fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE',
+  });
   if (!resposta.ok) {
-    throw new Error('Não foi possível remover o Servicos.');
+    throw new Error('Não foi possível remover o serviço.');
   }
 }
-
-// ---------------------------------------------------------------------
-// PONTO DE EXERCÍCIO
-// ---------------------------------------------------------------------
-// Para o cadastro de "serviços oferecidos", crie um arquivo parecido,
-// por exemplo "src/api/servicos.js", copiando estas mesmas cinco
-// funções e trocando BASE_URL para '/api/servicos'.
-// ---------------------------------------------------------------------
