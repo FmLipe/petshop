@@ -32,7 +32,7 @@ function validarServico(dados) {
 // GET /api/servico -> lista todos os servico da loja
 router.get('/', (req, res) => {
   const servicos = db
-    .prepare('SELECT * FROM servico ORDER BY id_servico DESC')
+    .prepare('SELECT * FROM servicos ORDER BY id_servico DESC')
     .all();
   res.json(servicos);
 });
@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
 // GET /api/servicos/:id -> busca um servico pelo ID
 router.get('/:id', (req, res) => {
   const servico = db
-    .prepare('SELECT * FROM servico WHERE id_servico = ?')
+    .prepare('SELECT * FROM servicos WHERE id_servico = ?')
     .get(req.params.id);
 
   if (!servico) {
@@ -68,14 +68,14 @@ router.post('/', (req, res) => {
 
   const resultado = db
     .prepare(
-      `INSERT INTO servico
+      `INSERT INTO servicos
         (nome, preco, descricao, duracao_minutos)
        VALUES (?, ?, ?, ?)`
     )
     .run(nome, preco, descricao, duracao_minutos);
 
   const novoCliente = db
-    .prepare('SELECT * FROM servico WHERE id_servico = ?')
+    .prepare('SELECT * FROM servicos WHERE id_servico = ?')
     .get(resultado.lastInsertRowid);
 
   res.status(201).json(novoServico);
@@ -123,7 +123,7 @@ router.delete('/:id', (req, res) => {
     .run(req.params.id);
 
   if (resultado.changes === 0) {
-    return res.status(404).json({ erro: 'Servicos não encontrado.' });
+    return res.status(404).json({ erro: 'Serviços não encontrado.' });
   }
 
   res.status(204).send();

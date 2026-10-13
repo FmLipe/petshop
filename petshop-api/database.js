@@ -43,9 +43,10 @@ db.exec(`
     id_servico INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     descricao TEXT,
-    preco REAL NOT NULL
-  )
-`)
+    preco REAL NOT NULL,
+    duracao_minutos INTEGER
+  );
+`);
 // ---------------------------------------------------------------------
 // PONTO DE EXERCÍCIO
 // ---------------------------------------------------------------------

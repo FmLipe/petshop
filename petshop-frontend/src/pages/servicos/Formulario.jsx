@@ -32,17 +32,23 @@ function ServicosFormulario() {
 
   async function handleSalvar(dados) {
     try {
+      const dadosParaEnviar = {
+        nome: dados.nome,
+        descricao: dados.descricao,
+        preco: parseFloat(dados.preco),
+        duracao_minutos: dados.duracao ? parseInt(dados.duracao, 10) : (dados.duracao_minutos ? parseInt(dados.duracao_minutos, 10) : null)
+      };
+
       if (modoEdicao) {
-        await atualizarServico(id, dados);
+        await atualizarServico(id, dadosParaEnviar);
       } else {
-        await criarServico(dados);
+        await criarServico(dadosParaEnviar);
       }
       navigate('/servicos');
     } catch (err) {
       alert(err.message);
     }
   }
-
   function handleCancelar() {
     navigate('/servicos');
   }
