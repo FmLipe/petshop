@@ -1,0 +1,11 @@
+1: Se usarmos "document.querySelector" e InnerHTML, funciona muito bem no inicio, porém com o passar do tempo fica difícil manter quanto maior for a página. 
+O React resolve justamente esse problema, criando blocos independentes e separados, após isso, ele junta todos os blocos e assim é formado a página completa.
+
+2: Uma das maneiras de identificar um componente react, é olhando sua nomenclatura, que sempre vai começar com uma letra maiúscula. Ex: function async Função.
+Nesse caso, podemos perceber que há dois arquivos: ClienteForm e ClienteList, podemos perceber também que eles estão em formato JSX (mistura de HTML e JavaScript)
+
+3: SPA (Single Page Application), é quando não precisamos recarregar a página para mostrar o componente de acordo com a URl. 
+A biblioteca responsável nesse caso é o React Router.
+
+4:Sim. A mudança foi de que, ao invés de usar o "document.querySelector" e manipular todo o HTML de uma vez, utilizamos o React para uma melhor organização de dados.
+	 
