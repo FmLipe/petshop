@@ -56,7 +56,7 @@ function ServicoForm({ valoresIniciais, modoEdicao, aoSalvar, aoCancelar }) {
               step = "0.01"
               min = "0"
               placeholder="0.00"
-              className={`form-control ${errors.telefone ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.preco ? 'is-invalid' : ''}`}
               {...register('preco', { 
                 required: 'Informe o preço.', 
                 valueAsNumber: true,
@@ -64,16 +64,16 @@ function ServicoForm({ valoresIniciais, modoEdicao, aoSalvar, aoCancelar }) {
             })}
             />
             {errors.preco && (
-              <div className="invalid-feedback">{errors.telefone.message}</div>
+              <div className="invalid-feedback">{errors.preco.message}</div>
             )}
           </div>
 
           <div className="col-md-3">
-            <label htmlFor="duracao_minutos" className="form-label">
+            <label html For="duracao_minutos" className="form-label">
               Duração (minutos)
             </label>
             <input
-            id = "duração_minutos"
+            id = "duraçao_minutos"
             type = "number"
             min = "1"
             placeholder='Ex.: 30'

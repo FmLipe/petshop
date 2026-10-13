@@ -24,11 +24,9 @@ function App() {
         <Route path="/clientes" element={<ClientesLista />} />
         <Route path="/clientes/novo" element={<ClienteFormulario />} />
         <Route path="/clientes/:id/editar" element={<ClienteFormulario />} />
-        <Route path="/servicos" element={<Servicos />} />
-        <Route path='/servicos/lista' element={<ServicosLista />} />
-        <Route path='/servicos/novo' element={<ServicosFormulario />} />
-        <Route path='/servicos;id/editar' element={<ServicosFormulario />} />
-
+        <Route path="/servicos" element={<ServicosLista />} />
+        <Route path="/servicos/novo" element={<ServicosFormulario />} />
+        <Route path="/servicos/:id/editar" element={<ServicosFormulario />} />
       </Routes>
     </BrowserRouter>
   );

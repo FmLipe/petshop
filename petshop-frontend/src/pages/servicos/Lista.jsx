@@ -5,9 +5,12 @@ import ServicoList from '../../components/ServicoList';
 
 function ServicosLista() {
   const [servicos, setServicos] = useState([]);
+  //Mostra um indicador visual enquanto o fetch está rodando    
   const [carregando, setCarregando] = useState(true);
+  //Caso a requisição falhe, mostra mensagem de erro
   const [erro, setErro] = useState(null);
 
+  //função que vai buscar os serviços na lista da API
   async function carregar() {
     try {
       setCarregando(true);
@@ -25,6 +28,7 @@ function ServicosLista() {
     carregar();
   }, []);
 
+  //Confirmar a remoção de um serviço
   async function handleRemover(id) {
     const confirmou = window.confirm('Tem certeza de que deseja remover este serviço?');
     if (!confirmou) return;
@@ -38,6 +42,7 @@ function ServicosLista() {
   }
 
   return (
+    //Os botões que a gente vai clicar, etc.
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>Serviços</h1>
